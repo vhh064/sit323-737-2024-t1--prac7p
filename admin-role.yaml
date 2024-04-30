@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: admin-access
+rules:
+- apiGroups: ["", "apps", "batch"]
+  resources: ["statefulsets", "replicationcontrollers", "jobs", "replicasets", "deployments", "pods", "daemonsets", 
+  "cronjobs", "events", "namespaces"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
